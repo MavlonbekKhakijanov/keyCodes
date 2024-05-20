@@ -8,7 +8,11 @@ const button = document.querySelector(".btn");
 document.addEventListener("keyup", (e) => {
   text.classList.add("hidden");
   keyNumber.textContent = e.keyCode;
-  keyCode.textContent = e.key;
+  if (e.code == "Space") {
+    keyCode.textContent = e.code;
+  } else {
+    keyCode.textContent = e.key;
+  }
   keyBox.classList.remove("hidden");
   button.classList.remove("hidden");
   console.log(e);
